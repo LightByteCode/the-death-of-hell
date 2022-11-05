@@ -13,7 +13,7 @@ root.title("地府之亡")
 root.geometry(f"{width}x{height}")
 root.resizable(False,False)#cannot resize
 
-bg_img=Image.open("bg1.png")#open the background image
+bg_img=Image.open("logo.png")#open the background image
 bg_img=ImageTk.PhotoImage(bg_img)#cast to TK image
 #back ground canvas init
 bg_cv=tk.Canvas(root,width=width,height=height,relief=tk.FLAT)#the canvas to show backgound image
@@ -28,7 +28,7 @@ time.sleep(2)
 ##main GUI##
 root.update()
 
-bg_img=Image.open("bg2.png")#open the background image
+bg_img=Image.open("bg.png")#open the background image
 bg_img=ImageTk.PhotoImage(bg_img)#cast to TK image
 bg_cv.create_image(0,0,image=bg_img,anchor="nw")
 
@@ -36,10 +36,14 @@ bg_cv.create_image(0,0,image=bg_img,anchor="nw")
 def show_about_window():
     about_win=tk.Toplevel(root,width=400,height=550)
     about_win.title("关于")
+    about_win.resizable(False,False)
+
     text=tk.Text(about_win,font=("楷体",20))
     text.place(x=0,y=0,width=400,height=550)
 
-    text.insert("0.0","游戏开发者：张高毅\n制作者：刘清硕\n")
+    text.insert("0.0","游戏开发者：张高毅\n制作者：刘清硕\n版权所有：拜阎王会")
+
+    text.config(state="disabled")
 
 #def open_about_window():
 
