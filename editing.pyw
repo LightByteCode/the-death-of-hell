@@ -25,8 +25,12 @@ root.resizable(False,False)#cannot resize
 
 bg_img=Image.open("logo.png")#open the background image
 bg_img=ImageTk.PhotoImage(bg_img)#cast to TK image
+#frames
+frame0=tk.Frame(root,width=width,height=height,relief="flat",bg="white")
+frame1=tk.Frame(root,width=width,height=height,relief="flat",bg="white")
+frame0.place(x=0,y=0)
 #back ground canvas init
-bg_cv=tk.Canvas(root,width=width,height=height,relief=tk.FLAT)#the canvas to show backgound image
+bg_cv=tk.Canvas(frame0,width=width,height=height,relief="flat")#the canvas to show backgound image
 bg_cv.place(x=0,y=0)
 #put the background image onto the backgrond canvas
 bg_cv.create_image(0,0,image=bg_img,anchor="nw")
@@ -60,6 +64,23 @@ def show_about_window():
 button_about=tk.Button(bg_cv,bg="black",fg="red",font=("隶书",30),text="关于我们",relief="flat",cursor="hand2",
                         command=show_about_window,activebackground="black",activeforeground="red")
 button_about.place(x=300,y=200,width=200,height=70)
+#start main game
+#---------class Card---------
+class Card:
+    def __init__(self,num,color,pos=(0,0)):
+        global frame1
+        self.num=num
+        self.color=color
+        self.x,self.y=pos
+        if self.color=="black":
+            text_color="white"
+        else:
+            text_color="black"
+        self.body=tk.Button(frame1,relief="flat",bg=self.color,fg=text_color)
+        
+#------------Card------------
+def start_main_game():
+    pass
 #start play
 button_play=tk.Button(bg_cv,bg="black",fg="red",font=("隶书",30),text="开始游戏",relief="flat",cursor="hand2",
                         command=None,activebackground="black",activeforeground="red")
