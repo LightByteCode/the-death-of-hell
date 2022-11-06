@@ -2,7 +2,17 @@ import tkinter as tk
 import sys
 import time,random,threading
 from PIL import Image,ImageTk
-
+'''
+root_window
+|__frame0(main GUI):start&main GUI
+    |__bg_img
+        |__button_about
+        |__button_play
+        |__button_settings
+|__frame1(game):main game
+|__about_window
+'''
+#--------------------------------------
 ##start program##
 #global varibles
 width=800
@@ -22,9 +32,9 @@ bg_cv.place(x=0,y=0)
 bg_cv.create_image(0,0,image=bg_img,anchor="nw")
 #update
 root.update()
-
+#--------------------------------------
 time.sleep(2)
-
+#--------------------------------------
 ##main GUI##
 root.update()
 
@@ -42,15 +52,18 @@ def show_about_window():
     text.place(x=0,y=0,width=400,height=550)
 
     text.insert("0.0","游戏开发者：张高毅\n制作者：刘清硕\n版权所有：拜阎王会")
+    text.window_create("1.0")
 
     text.config(state="disabled")
-
-#def open_about_window():
 
 #about
 button_about=tk.Button(bg_cv,bg="black",fg="red",font=("隶书",30),text="关于我们",relief="flat",cursor="hand2",
                         command=show_about_window,activebackground="black",activeforeground="red")
-button_about.place(x=300,y=200,width=200,height=100)
-
+button_about.place(x=300,y=200,width=200,height=70)
+#start play
+button_play=tk.Button(bg_cv,bg="black",fg="red",font=("隶书",30),text="开始游戏",relief="flat",cursor="hand2",
+                        command=None,activebackground="black",activeforeground="red")
+button_play.place(x=300,y=300,width=200,height=70)
+#--------------------------------------
 #mainloop
 root.mainloop()
