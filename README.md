@@ -5,4 +5,5 @@
 如你所见，这是一个开源项目，目前正在写(未完待续)
 ![image](https://user-images.githubusercontent.com/111341725/200109651-e90c2013-6c78-4756-884c-411d9bee7f9f.png)
 
-使用python3，运行需要去python官网下载(www.python.org)python3并安装。再使用cmd命令：pip install pillow安装PIL
+使用python3，运行需要去python官网下载(www.python.org)
+python3并安装。再使用cmd命令：pip install pillow安装PIL
